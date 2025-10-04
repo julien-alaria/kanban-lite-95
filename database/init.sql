@@ -3,5 +3,5 @@ CREATE TABLE IF NOT EXISTS items (
     title TEXT NOT NULL,
     content TEXT NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    statuts TEXT DEFAULT 'todo' CHECK (statuts IN ('todo', 'inprogress', 'finished'))
+    `status` TEXT DEFAULT 'todo' CHECK (`status` IN ('todo', 'inprogress', 'done'))
 );

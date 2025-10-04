@@ -22,9 +22,9 @@ switch ($route) {
     case 'items.update':
         updateItem();
         break;
-    case 'items.kanban':
-        kanbanItem();
+    case 'items.updateStatus':
+        updateItemStatus();
         break;
     default:
-    echo "404 - Page Not found";
+    echo "404 - Page Not Found";
 }

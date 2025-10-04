@@ -1,13 +1,14 @@
 <?php $search = $search ?? ''; ?>
 
 <div class="result-container">
-    <div class="result_title">
-        <h2>Résultat de la recherche pour : "<?php echo htmlspecialchars($search); ?></h2>
+
+    <div class="result-title">
+        <h2>Résultat de la recherche pour : "<?php echo htmlspecialchars($search); ?>"</h2>
     </div>
 
     <div class="search-result">
         <?php if (empty($items)): ?>
-            <p>Aucun ticket en cours</p>
+        <p>Aucun ticket en cours</p>
         <?php else : ?>
             <ul>
                 <?php foreach ($items as $item): ?>

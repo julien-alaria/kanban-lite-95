@@ -14,13 +14,19 @@
         ? htmlspecialchars($item['content']) 
         : ''  ?></textarea>
 
+        <select name="status" id="status">
+            <option value="todo" <?= $item['status'] == 'todo' ? 'selected' : '' ?>>A faire</option>
+            <option value="inprogress" <?= $item['status'] == 'inprogress' ? 'selected' : '' ?>>En cours</option>
+            <option value="done" <?= $item['status'] == 'done' ? 'selected' : '' ?>>Terminé</option>
+        </select>
+
         <button type="submit">Mettre à jour</button>
 
     </form>
 
     <button class="link"><a href="index.php?route=items.index">Annuler</a></button>
 
-        <script>
+    <script>
         const mde = new SimpleMDE({
         element: document.getElementById("content"),
         placeholder: "Écrivez votre note en Markdown…",

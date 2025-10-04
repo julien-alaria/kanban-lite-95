@@ -12,6 +12,27 @@ function getItems() {
     return $pdo->query("SELECT * FROM items ORDER BY created_at DESC")->fetchAll();
 }
 
+function getTodoItem() {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT * FROM items WHERE status = 'todo' ORDER BY created_at ASC");
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getInprogressItem() {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT * FROM items WHERE status = 'inprogress' ORDER BY created_at ASC");
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getDoneItem() {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT * FROM items WHERE status = 'done' ORDER BY created_at ASC");
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function getItemById($id) {
     global $pdo;
     $stmt = $pdo->prepare("SELECT * FROM items WHERE id = ?");
@@ -19,10 +40,10 @@ function getItemById($id) {
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function addItem($title, $content) {
+function addItem($title, $content, $status) {
     global $pdo;
-    $stmt = $pdo->prepare("INSERT INTO items (title, content) VALUES (?, ?)");
-    $stmt->execute([htmlspecialchars($title), htmlspecialchars($content)]);
+    $stmt = $pdo->prepare("INSERT INTO items (title, content, `status`) VALUES (?, ?, ?)");
+    $stmt->execute([htmlspecialchars($title), htmlspecialchars($content), $status]);
 }
 
 function deleteItemById($id) {
@@ -31,23 +52,8 @@ function deleteItemById($id) {
     $stmt->execute([$id]);
 }
 
-function updateItems($title, $content, $id) {
+function updateitems($title, $content, $status, $id) {
     global $pdo;
-    $stmt = $pdo->prepare("UPDATE items SET title = ?, content = ? WHERE id = ?");
-    $stmt->execute([$title, $content, $id]);
+    $stmt = $pdo->prepare("UPDATE items SET title = ?, content = ?, `status` = ? WHERE id = ?");
+    $stmt->execute([$title, $content, $status, $id]);
 }
-
-function getItemsByStatus($status) {
-    global $pdo;
-
-    $validStatus = ['todo', 'inprogress', 'finished'];
-
-    if (!in_array($status, $validStatus, true)) {
-        throw new InvalidArgumentException("Statut invalide : $status");
-    }
-
-    $stmt = $pdo->prepare("SELECT * FROM items WHERE statuts = ? ORDER BY created_at ASC");
-    $stmt->execute([$status]);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-    
