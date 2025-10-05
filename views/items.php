@@ -16,15 +16,14 @@
 
     <div class="items-columns-container">
         
-        <div class="column-todo">
+        <div class="column-todo dropzone" data-status="todo">
             <h3>A faire (todo)</h3>
-            <?php if (empty($todo)): ?>
-                <p>Aucun item pour ce statut.</p>
-            <?php else: ?>
-
-                <div class="card-container">
+            <div class="card-container">
+                <?php if (empty($todo)): ?>
+                    <p>Aucun item pour ce statut.</p>
+                <?php else: ?>
                     <?php foreach ($todo as $item): ?>
-                        <div class="card">
+                        <div class="card" draggable="true" data-id="<?= $item['id'] ?>">
                             <div class="card-details">
                                 <p class="card_title">
                                     <?= htmlspecialchars($item['title']) ?>
@@ -59,20 +58,19 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
-                </div>
+                <?php endif; ?>
+            </div>
 
-            <?php endif; ?>
         </div>
 
-        <div class="column-inprogress">
+        <div class="column-inprogress dropzone" data-status="inprogress">
             <h3>En cours (in progress)</h3>
-            <?php if (empty($inprogress)): ?>
-                <p>Aucun item pour ce statut.</p>
-            <?php else: ?>
-
-                <div class="card-container">
+            <div class="card-container">
+                <?php if (empty($inprogress)): ?>
+                    <p>Aucun item pour ce statut.</p>
+                <?php else: ?>
                     <?php foreach ($inprogress as $item): ?>
-                        <div class="card">
+                        <div class="card" draggable="true" data-id="<?= $item['id'] ?>">
                             <div class="card-details">
                                 <p class="card_title">
                                     <?= htmlspecialchars($item['title']) ?>
@@ -106,20 +104,18 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
-                </div>
-
-            <?php endif; ?>
+                <?php endif; ?>
+            </div>
         </div>
 
-        <div class="column-done">
+        <div class="column-done dropzone" data-status="done">
             <h3>Terminé (done)</h3>
-            <?php if (empty($done)): ?>
-                <p>Aucun item pour ce statut.</p>
-            <?php else: ?>
-
-                <div class="card-container">
+            <div class="card-container">
+                <?php if (empty($done)): ?>
+                    <p>Aucun item pour ce statut.</p>
+                <?php else: ?>
                     <?php foreach ($done as $item): ?>
-                        <div class="card">
+                        <div class="card" draggable="true" data-id="<?= $item['id'] ?>">
                             <div class="card-details">
                                 <p class="card_title">
                                     <?= htmlspecialchars($item['title']) ?>
@@ -153,9 +149,8 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
-                </div>
-
-            <?php endif; ?>
+                <?php endif; ?>
+            </div>
         </div>
 
     </div>
