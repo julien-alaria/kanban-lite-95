@@ -12,11 +12,14 @@
         <h2>Tickets en cours</h2>
     </div>
 
-    <button class="link"><a href="index.php?route=items.create">Ajouter un ticket</a></button>
+    <div class="link-container">
+         <button class="link"><a href="index.php?route=items.create">Ajouter un ticket</a></button>
+    </div>
+   
 
     <div class="items-columns-container">
         
-        <div class="column-todo dropzone" data-status="todo">
+        <div class="column column-todo dropzone" data-status="todo">
             <h3>A faire (todo)</h3>
             <div class="card-container">
                 <?php if (empty($todo)): ?>
@@ -25,7 +28,7 @@
                     <?php foreach ($todo as $item): ?>
                         <div class="card" draggable="true" data-id="<?= $item['id'] ?>">
                             <div class="card-details">
-                                <p class="card_title">
+                                <p class="card-title">
                                     <?= htmlspecialchars($item['title']) ?>
                                 </p>
 
@@ -63,7 +66,7 @@
 
         </div>
 
-        <div class="column-inprogress dropzone" data-status="inprogress">
+        <div class="column column-inprogress dropzone" data-status="inprogress">
             <h3>En cours (in progress)</h3>
             <div class="card-container">
                 <?php if (empty($inprogress)): ?>
@@ -72,7 +75,7 @@
                     <?php foreach ($inprogress as $item): ?>
                         <div class="card" draggable="true" data-id="<?= $item['id'] ?>">
                             <div class="card-details">
-                                <p class="card_title">
+                                <p class="card-title">
                                     <?= htmlspecialchars($item['title']) ?>
                                 </p>
 
@@ -108,7 +111,7 @@
             </div>
         </div>
 
-        <div class="column-done dropzone" data-status="done">
+        <div class="column column-done dropzone" data-status="done">
             <h3>Terminé (done)</h3>
             <div class="card-container">
                 <?php if (empty($done)): ?>
@@ -117,7 +120,7 @@
                     <?php foreach ($done as $item): ?>
                         <div class="card" draggable="true" data-id="<?= $item['id'] ?>">
                             <div class="card-details">
-                                <p class="card_title">
+                                <p class="card-title">
                                     <?= htmlspecialchars($item['title']) ?>
                                 </p>
 

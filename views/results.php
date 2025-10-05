@@ -22,5 +22,5 @@
         <?php endif; ?>
     </div>
 
-    <button class="link"><a href="index.php?route=items.index">Retour à la liste complète</a></button>
+    <a href="index.php?route=items.index" class="link" >Retour à la liste complète</a>
 </div>

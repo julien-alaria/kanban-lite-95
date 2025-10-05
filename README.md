@@ -60,6 +60,7 @@ L'application suit le modèle MVC en séparant:
 # Captures d'écran de l'application
 
 ![presentation](kanban-lite_screenshot1.jpg)
+![presentation](kanban-lite_screenshot2.jpg)
 
 # Arborescence du projet
 

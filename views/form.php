@@ -14,6 +14,8 @@
         <button type="submit">Ajouter</button>
     </form>
 
-    <a href="index.php?route=items.index" class="link">Retour à la liste</a>
-
+    <div class="link-container">
+        <a href="index.php?route=items.index" class="link">Retour à la liste</a>
+    </div>
+    
 </div>

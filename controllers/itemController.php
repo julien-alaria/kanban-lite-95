@@ -41,7 +41,7 @@ function deleteItem() {
 function searchItem() {
     if (isset($_GET['search'])) {
         $search = $_GET['search'];
-        searchItems($search);
+        $items = searchItems($search);
     } else {
         $search = '';
         $items = getItems();
