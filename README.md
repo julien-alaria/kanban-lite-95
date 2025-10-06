@@ -59,8 +59,8 @@ L'application suit le modèle MVC en séparant:
 
 # Captures d'écran de l'application
 
-![presentation](kanban-lite_screenshot1.jpg)
-![presentation](kanban-lite_screenshot2.jpg)
+![presentation](assets/kanban-lite_screenshot1.jpg)
+![presentation](assets/kanban-lite_screenshot2.jpg)
 
 # Arborescence du projet
 
@@ -100,6 +100,10 @@ Kanban_Lite/
 │   ├── css/
 
 │       └── style.css
+
+│   ├── js/
+
+│       └── script.js
 
 │   └── index.php
 
