@@ -2,11 +2,11 @@
 
 # Kanban Lite 95
 
-Une application web simple de gestion de tickets sous forme de tableau **Kanban** avec un design inspiré par Windows 95, développée en PHP avec le design pattern MVC (Model-Vue-Controller), **HTML/CSS** et **Javascript** pour pour support du **Markdown** et manipulation des tickets par **drag & drop**.
+Une application web simple de gestion de tickets sous forme de tableau **Kanban** avec un design inspiré par Windows 95, développée en PHP avec le design pattern MVC (Model-Vue-Controller), **HTML/CSS** et **Javascript** pour support du **Markdown** et manipulation des tickets par **drag & drop**.
 
 # Fonctionnalités
 - **création, édition et suppression de tickets**
-- **organisation des tickets pas statut: A faire / Encours / Terminé**
+- **organisation des tickets pas statut: A faire / En cours / Terminé**
 - **affichage des notes avec rendu Markdown**
 - **manipulation des tickets par drag & drop**
 - **Statut modifiable via menu déroulant**
