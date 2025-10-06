@@ -125,6 +125,12 @@ Kanban_Lite/
 
 │
 
+├── assets/
+
+│   ├── kanban-lite_screenshot1.jpg
+
+│   └── kanban-lite_screenshot2.jpg
+
 └── README.md
 
 # Licence
