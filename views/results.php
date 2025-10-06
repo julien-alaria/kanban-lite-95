@@ -13,9 +13,12 @@
             <ul>
                 <?php foreach ($items as $item): ?>
                     <li>
-                        <strong><?= htmlspecialchars($item['title']); ?></strong>
-                        <?= htmlspecialchars($item['content']); ?><br>
-                        <small>Créée le <?= $item['created_at']; ?></small>
+                        <strong class="title-result"><?= htmlspecialchars($item['title']); ?></strong>
+
+                        <div class="rendered" data-md="<?= htmlspecialchars($item['content'], ENT_QUOTES) ?>">
+                        </div>
+                        <small class="created-result">Créée le <?= $item['created_at']; ?></small>
+
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -24,3 +27,5 @@
 
     <a href="index.php?route=items.index" class="link" >Retour à la liste complète</a>
 </div>
+<div class="spacer-fill-height"></div> 
+
