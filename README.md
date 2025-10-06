@@ -36,7 +36,7 @@ Les fonctionnalités dynamiques utilisent les bibliothèques JavaScript suivante
 
 1. **Cloner le dépôt GIT**
 
-git clone https://github.com/julien-alaria/kanban_lite.git
+git clone https://github.com/julien-alaria/kanban-lite-95.git
 
 2. **Lancer un serveur PHP local (depuis le dossier du projet)**
 
