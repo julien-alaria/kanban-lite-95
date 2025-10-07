@@ -64,7 +64,7 @@ L'application suit le modèle MVC en séparant:
 
 # Arborescence du projet
 
-Kanban_Lite/
+Kanban-Lite-95/
 │
 
 ├── controllers/
